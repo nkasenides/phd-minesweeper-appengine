@@ -1,0 +1,25 @@
+U4YruA.ehwdkQ:COJkxxIrPJo3DeLX
+
+----------------------------------
+
+publish:
+
+AblyRealtime ably = new AblyRealtime("U4YruA.ehwdkQ:COJkxxIrPJo3DeLX");
+Channel channel = ably.channels.get("test");
+
+/* Publish a message to the test channel */
+channel.publish("test", "hello");
+
+
+----------------------------------
+
+subscribe:
+
+MessageListener listener;
+listener = new MessageListener() {
+  @Override
+  public void onMessage(Message message) {
+    System.out.print(message.data);
+  }};
+};
+channel.subscribe("greeting", listener);

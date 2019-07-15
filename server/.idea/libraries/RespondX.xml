@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RespondX">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/RespondX.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
