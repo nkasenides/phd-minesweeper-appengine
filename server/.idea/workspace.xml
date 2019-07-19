@@ -7,65 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb97e85-693c-4402-af10-c4d4429fd8a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/RespondX.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_googlecode_objectify_objectify_6_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/RespondX.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/CreateGameServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/GetGameServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/GetStateServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/JoinGameServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/ListGamesServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servlets/PlayServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/BoardState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CellState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CommandType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Difficulty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Direction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/FullBoardState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/GameSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/GameState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/PartialBoardState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/PartialStatePreference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/RevealState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/StatelessGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/exception/InvalidCellReferenceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/exception/InvalidGameSpecificationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/GameCreatedResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/GetGameResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/GetStateResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/InvalidParameterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/JoinedGameResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/ListGamesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/MissingParameterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/response/UnknownFailureResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectify/ObjectifyBootstrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/APIUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/AuthUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/InputValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/TimeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/response/PlayResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firestore.indexes.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/firestore.rules" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minesweeper-firebase-firebase-adminsdk-dv2am-83560a0ccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/PlayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/PlayServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,17 +27,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/JoinGameServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
+            <state relative-caret-position="1819">
               <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+            <state relative-caret-position="458">
+              <caret line="183" column="17" lean-forward="true" selection-start-line="183" selection-start-column="17" selection-end-line="183" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +112,6 @@
         <option value="$PROJECT_DIR$/src/servlets/CreateGameServlet.java" />
         <option value="$PROJECT_DIR$/src/objectify/ObjectifyBootstrapper.java" />
         <option value="$PROJECT_DIR$/src/model/response/JoinedGameResponse.java" />
-        <option value="$PROJECT_DIR$/src/model/Game.java" />
         <option value="$PROJECT_DIR$/src/model/PartialStatePreference.java" />
         <option value="$PROJECT_DIR$/src/model/response/GetStateResponse.java" />
         <option value="$PROJECT_DIR$/src/model/PartialBoardState.java" />
@@ -164,15 +120,16 @@
         <option value="$PROJECT_DIR$/src/servlets/JoinGameServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/model/Move.java" />
+        <option value="$PROJECT_DIR$/src/model/response/PlayResponse.java" />
         <option value="$PROJECT_DIR$/src/servlets/PlayServlet.java" />
+        <option value="$PROJECT_DIR$/src/model/Game.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -180,7 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,6 +195,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -250,10 +207,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/model/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -334,17 +294,18 @@
       <updated>1562841352338</updated>
       <workItem from="1562841353566" duration="11436000" />
       <workItem from="1563199026109" duration="6722000" />
+      <workItem from="1563521447116" duration="5480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18158000" />
+    <option name="totallyTimeSpent" value="23638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49757674" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49757674" visible="true" weight="0.1641791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -359,7 +320,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.33152762" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -487,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/appengine-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/CellState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -616,16 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="53" lean-forward="true" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/PartialStatePreference.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -646,16 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/PartialBoardState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -667,13 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/JoinGameServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -693,14 +620,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Move.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/response/PlayResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="e#105#106#0" expanded="true" />
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#195#196#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
+            <element signature="e#2238#2239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/JoinGameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="183" column="17" lean-forward="true" selection-start-line="183" selection-start-column="17" selection-end-line="183" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/appengine-web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="62" lean-forward="true" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -711,10 +675,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/model/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="105" column="22" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+        <state relative-caret-position="90">
+          <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

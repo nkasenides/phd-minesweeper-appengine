@@ -10,6 +10,7 @@ import model.exception.InvalidCellReferenceException;
 
 import java.beans.Transient;
 import java.util.*;
+import java.util.logging.Logger;
 
 @Entity
 public class Game {
@@ -21,6 +22,8 @@ public class Game {
     private GameSpecification gameSpecification;
     private String boardState;
     private GameState gameState;
+
+    private transient FullBoardState fullBoardState;
 
     private Game() { }
 
@@ -192,12 +195,18 @@ public class Game {
     }
 
     public RevealState reveal(int row, int col) {
+
+        //TODO - StackOverflow
+
+//        final Logger log = Logger.getLogger(Game.class.getName());
+//        log.info(boardState);
         FullBoardState fullBoardState = gson.fromJson(boardState, FullBoardState.class);
 
         CellState referencedCell = fullBoardState.getCells()[row][col];
         if (referencedCell.getRevealState() == RevealState.COVERED) {
             if (referencedCell.isMined()) {
                 referencedCell.setRevealState(RevealState.REVEALED_MINE);
+                boardState = gson.toJson(fullBoardState);
                 computeGameState();
                 return RevealState.REVEALED_MINE;
             }
@@ -206,6 +215,7 @@ public class Game {
                 if (adjacentMines > 0) {
                     RevealState revealState = RevealState.getRevealStateFromNumberOfAdjacentMines(adjacentMines);
                     referencedCell.setRevealState(revealState);
+                    boardState = gson.toJson(fullBoardState);
                     computeGameState();
                     return revealState;
                 }
@@ -262,14 +272,15 @@ public class Game {
                             reveal(row + 1, col - 1);
                         }
                     }
+                    boardState = gson.toJson(fullBoardState);
                     computeGameState();
                     return RevealState.REVEALED_0;
 
                 }
             }
         }
-        computeGameState();
         boardState = gson.toJson(fullBoardState);
+        computeGameState();
         return referencedCell.getRevealState();
     }
 

@@ -26,6 +26,10 @@
         <servlet-name>GetStateServlet</servlet-name>
         <servlet-class>servlets.GetStateServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PlayServlet</servlet-name>
+        <servlet-class>servlets.PlayServlet</servlet-class>
+    </servlet>
 
     <!--Servlet Mappings-->
 
@@ -48,6 +52,10 @@
     <servlet-mapping>
         <servlet-name>GetStateServlet</servlet-name>
         <url-pattern>/getState</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlayServlet</servlet-name>
+        <url-pattern>/play</url-pattern>
     </servlet-mapping>
     
     <!--Objectify-->

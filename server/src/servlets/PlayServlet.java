@@ -1,9 +1,9 @@
 package servlets;
 
-import model.Game;
-import model.Move;
-import model.Session;
+import model.*;
+import model.exception.InvalidCellReferenceException;
 import model.response.MissingParameterResponse;
+import model.response.PlayResponse;
 import respondx.ErrorResponse;
 import util.APIUtils;
 
@@ -64,6 +64,7 @@ public class PlayServlet extends HttpServlet {
             return;
         }
 
+        //Parse move:
         Move move;
         try {
             move = Move.valueOf(moveStr);
@@ -72,6 +73,7 @@ public class PlayServlet extends HttpServlet {
             return;
         }
 
+        //Parse coordinates:
         int row;
         int col;
 
@@ -95,16 +97,101 @@ public class PlayServlet extends HttpServlet {
             return;
         }
 
+        //Make game & session checks:
+        if (session.isSpectator()) {
+            response.getWriter().write(new ErrorResponse("Invalid operation", "You are registered to this game as a spectator and cannot perform any moves.").toJSON());
+            return;
+        }
+
+        if (game.getGameState() == GameState.NOT_STARTED) {
+            response.getWriter().write(new ErrorResponse("Invalid operation", "The game has not started yet!").toJSON());
+            return;
+        }
+
+        final FullBoardState fullBoardState = game.getFullBoardState();
+
+        //Make the move:
         switch (move) {
+
             case REVEAL:
-                //TODO
-                break;
+
+                //Check if already revealed:
+                if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED) {
+                    response.getWriter().write(new ErrorResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
+                    return;
+                }
+
+                //Reveal:
+                RevealState revealState = game.reveal(row, col);
+                switch (revealState) {
+                    case REVEALED_0:
+                    case REVEALED_1:
+                    case REVEALED_2:
+                    case REVEALED_3:
+                    case REVEALED_4:
+                    case REVEALED_5:
+                    case REVEALED_6:
+                    case REVEALED_7:
+                    case REVEALED_8:
+                        session.changePoints(10);
+                        break;
+                    case REVEALED_MINE:
+                        session.changePoints(-5);
+                        break;
+                }
+
+                //Check if game has ended:
+                if (game.getGameState() == GameState.ENDED_LOST || game.getGameState() == GameState.ENDED_WON) {
+                    game.revealAll();
+                }
+
+                //Save the game and session:
+                ofy().save().entity(game);
+                ofy().save().entity(session);
+
+                //Respond:
+                response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
+                return;
+
             case FLAG_UNFLAG:
-                //TODO
-                break;
+
+                //Check if already revealed:
+                if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED) {
+                    response.getWriter().write(new ErrorResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
+                    return;
+                }
+
+                //Flag/Unflag the cell:
+                game.flag(row, col);
+
+                //Save the game and session:
+                ofy().save().entity(game);
+                ofy().save().entity(session);
+
+                response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
+                return;
+
             case SHIFT:
-                //TODO
-                break;
+
+                final PartialStatePreference partialStatePreference = session.getPartialStatePreference();
+
+                //Check if the new partialBoardState would be valid:
+                try {
+                    new PartialBoardState(partialStatePreference.getWidth(), partialStatePreference.getHeight(), row, col, game.getFullBoardState());
+                } catch (InvalidCellReferenceException e) {
+                    response.getWriter().write(new ErrorResponse("Invalid move", "The move shift to cell (" + row + ", " + col + ") is out of bounds.").toJSON());
+                    return;
+                }
+
+                //Set the new position:
+                session.setPositionCol(col);
+                session.setPositionRow(row);
+
+                //Save the session:
+                ofy().save().entity(session);
+
+                response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
+                return;
         }
 
 
