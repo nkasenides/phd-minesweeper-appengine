@@ -4,13 +4,11 @@ import com.google.gson.Gson;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
-import com.googlecode.objectify.annotation.Ignore;
 import com.googlecode.objectify.annotation.Index;
 import model.exception.InvalidCellReferenceException;
 
 import java.beans.Transient;
 import java.util.*;
-import java.util.logging.Logger;
 
 @Entity
 public class Game {
@@ -195,19 +193,19 @@ public class Game {
     }
 
     public RevealState reveal(int row, int col) {
-
-        //TODO - StackOverflow
-
-//        final Logger log = Logger.getLogger(Game.class.getName());
-//        log.info(boardState);
         FullBoardState fullBoardState = gson.fromJson(boardState, FullBoardState.class);
+        RevealState revealState = doReveal(fullBoardState, row, col);
+        computeGameState();
+        boardState = gson.toJson(fullBoardState);
+        return revealState;
+    }
+
+    private RevealState doReveal(FullBoardState fullBoardState, int row, int col) {
 
         CellState referencedCell = fullBoardState.getCells()[row][col];
         if (referencedCell.getRevealState() == RevealState.COVERED) {
             if (referencedCell.isMined()) {
                 referencedCell.setRevealState(RevealState.REVEALED_MINE);
-                boardState = gson.toJson(fullBoardState);
-                computeGameState();
                 return RevealState.REVEALED_MINE;
             }
             else {
@@ -215,8 +213,6 @@ public class Game {
                 if (adjacentMines > 0) {
                     RevealState revealState = RevealState.getRevealStateFromNumberOfAdjacentMines(adjacentMines);
                     referencedCell.setRevealState(revealState);
-                    boardState = gson.toJson(fullBoardState);
-                    computeGameState();
                     return revealState;
                 }
                 else {
@@ -227,60 +223,55 @@ public class Game {
                     //Scan adjacent cells, recursively:
                     if (fullBoardState.isValidCell(row - 1, col)) {
                         if (!fullBoardState.getCells()[row - 1][col].isMined()) {
-                            reveal(row - 1, col);
+                            doReveal(fullBoardState, row - 1, col);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row + 1, col)) {
                         if (!fullBoardState.getCells()[row + 1][col].isMined()) {
-                            reveal(row + 1, col);
+                            doReveal(fullBoardState, row + 1, col);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row, col + 1)) {
                         if (!fullBoardState.getCells()[row][col + 1].isMined()) {
-                            reveal(row, col + 1);
+                            doReveal(fullBoardState, row, col + 1);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row, col - 1)) {
                         if (!fullBoardState.getCells()[row][col - 1].isMined()) {
-                            reveal(row, col - 1);
+                            doReveal(fullBoardState, row, col - 1);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row - 1, col + 1)) {
                         if (!fullBoardState.getCells()[row - 1][col + 1].isMined()) {
-                            reveal(row - 1, col + 1);
+                            doReveal(fullBoardState, row - 1, col + 1);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row - 1, col - 1)) {
                         if (!fullBoardState.getCells()[row - 1][col - 1].isMined()) {
-                            reveal(row - 1, col - 1);
+                            doReveal(fullBoardState, row - 1, col - 1);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row + 1, col + 1)) {
                         if (!fullBoardState.getCells()[row + 1][col + 1].isMined()) {
-                            reveal(row + 1, col + 1);
+                            doReveal(fullBoardState, row + 1, col + 1);
                         }
                     }
 
                     if (fullBoardState.isValidCell(row + 1, col - 1)) {
                         if (!fullBoardState.getCells()[row + 1][col - 1].isMined()) {
-                            reveal(row + 1, col - 1);
+                            doReveal(fullBoardState, row + 1, col - 1);
                         }
                     }
-                    boardState = gson.toJson(fullBoardState);
-                    computeGameState();
                     return RevealState.REVEALED_0;
-
                 }
             }
         }
-        boardState = gson.toJson(fullBoardState);
-        computeGameState();
         return referencedCell.getRevealState();
     }
 
