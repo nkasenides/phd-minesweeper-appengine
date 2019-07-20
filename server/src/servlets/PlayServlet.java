@@ -156,7 +156,7 @@ public class PlayServlet extends HttpServlet {
             case FLAG_UNFLAG:
 
                 //Check if already revealed:
-                if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED) {
+                if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED && fullBoardState.getCells()[row][col].getRevealState() != RevealState.FLAGGED) {
                     response.getWriter().write(new ErrorResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
                     return;
                 }

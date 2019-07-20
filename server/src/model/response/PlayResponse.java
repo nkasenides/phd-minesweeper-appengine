@@ -12,7 +12,7 @@ public class PlayResponse extends SuccessResponse {
     public PlayResponse(Move move, int row, int col, GameState gameState, int points) {
         super("Play success", "Your move '" + move.getName() + "' on cell (" + row + "," + col + ") was successful.");
         JsonObject data = new JsonObject();
-        data.add("gameState", new Gson().toJsonTree(gameState).getAsJsonObject());
+        data.addProperty("gameState", gameState.toString());
         data.addProperty("points", points);
         setData(data);
     }

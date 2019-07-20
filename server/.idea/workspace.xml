@@ -7,8 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb97e85-693c-4402-af10-c4d4429fd8a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/src/api/API.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/ui/PlayerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/response/PlayResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/response/PlayResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Server/model/response/PlayResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Server/model/response/PlayResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/response/PlayResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/response/PlayResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlets/PlayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/PlayServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,20 +38,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="125" column="38" lean-forward="true" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+            <state relative-caret-position="209">
+              <caret line="158" column="174" selection-start-line="158" selection-start-column="174" selection-end-line="158" selection-end-column="174" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
               <caret line="198" column="40" selection-start-line="198" selection-start-column="40" selection-end-line="198" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/response/PlayResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,13 +137,13 @@
         <option value="$PROJECT_DIR$/src/servlets/JoinGameServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/model/Move.java" />
+        <option value="$PROJECT_DIR$/src/model/Game.java" />
         <option value="$PROJECT_DIR$/src/model/response/PlayResponse.java" />
         <option value="$PROJECT_DIR$/src/servlets/PlayServlet.java" />
-        <option value="$PROJECT_DIR$/src/model/Game.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -294,15 +313,15 @@
       <workItem from="1563199026109" duration="6722000" />
       <workItem from="1563521447116" duration="5480000" />
       <workItem from="1563646694919" duration="93000" />
-      <workItem from="1563649668087" duration="1118000" />
+      <workItem from="1563649668087" duration="2130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24849000" />
+    <option name="totallyTimeSpent" value="25861000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49757674" visible="true" weight="0.1673774" />
@@ -625,16 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/response/PlayResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Session.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -668,10 +677,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/model/response/PlayResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="125" column="38" lean-forward="true" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+        <state relative-caret-position="238">
+          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -682,6 +694,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="158" column="174" selection-start-line="158" selection-start-column="174" selection-end-line="158" selection-end-column="174" />
         </state>
       </provider>
     </entry>
