@@ -55,7 +55,7 @@ public class GetStateServlet extends HttpServlet {
         PartialStatePreference partialStatePreference = referencedSession.getPartialStatePreference();
         try {
             PartialBoardState partialBoardState = new PartialBoardState(partialStatePreference.getWidth(), partialStatePreference.getHeight(), referencedSession.getPositionRow(), referencedSession.getPositionCol(), referencedGame.getFullBoardState());
-            response.getWriter().write(new GetStateResponse(partialBoardState, sessionID).toJSON());
+            response.getWriter().write(new GetStateResponse(partialBoardState, referencedGame.getGameState(), sessionID).toJSON());
         }
         //If failed to get the partial state, return error:
         catch (InvalidCellReferenceException e) {
