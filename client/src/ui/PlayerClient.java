@@ -27,8 +27,8 @@ public class PlayerClient implements Runnable {
     private static Thread[] threads;
     private static PlayerClient[] clients;
 
-    private static final boolean DEBUG = false;
-    private static boolean gui = false;
+    private static final boolean DEBUG = true;
+    private static boolean gui = true;
     private PlayerGameForm gameForm;
 
     private String name;
@@ -85,16 +85,17 @@ public class PlayerClient implements Runnable {
         return name;
     }
 
-    private void listGamesAndJoinFirst() {
-
+    @Override
+    public void run() {
         class GetStateAsyncTask extends HTTPAsyncTask {
 
             public GetStateAsyncTask(ParameterMap params) {
-                super(API.JOIN_GAME_ENDPOINT, params, RequestMethod.GET);
+                super(API.GET_STATE_ENDPOINT, params, RequestMethod.GET);
             }
 
             @Override
             protected void onResponseReceived(String response) {
+                if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
                     Response jsonResponse = gson.fromJson(response, Response.class);
@@ -105,7 +106,20 @@ public class PlayerClient implements Runnable {
                         JsonObject data = jsonResponse.getData();
                         try {
                             partialBoardState = gson.fromJson(data.get("partialBoardState"), PartialBoardState.class);
-                            System.out.println("HI");
+                            String gameStateStr = data.get("gameState").getAsString();
+                            gameState = GameState.valueOf(gameStateStr);
+
+                            gameForm = new PlayerGameForm(PlayerClient.this, PlayerClient.this.name);
+                            if (!stateInitialized) {
+                                if (gui) gameForm.initialize();
+                                stateInitialized = true;
+                            }
+                            if (gui) gameForm.update();
+
+                            while (gameState != GameState.ENDED_WON && gameState != GameState.ENDED_LOST) {
+
+                            }
+
                         } catch (JsonSyntaxException e) {
                             throw new RuntimeException(e);
                         }
@@ -125,6 +139,7 @@ public class PlayerClient implements Runnable {
 
             @Override
             protected void onResponseReceived(String response) {
+                if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
                     Response jsonResponse = gson.fromJson(response, Response.class);
@@ -159,6 +174,7 @@ public class PlayerClient implements Runnable {
 
             @Override
             protected void onResponseReceived(String response) {
+                if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
                     Response jsonResponse = gson.fromJson(response, Response.class);
@@ -189,15 +205,6 @@ public class PlayerClient implements Runnable {
         }
 
         new ListGamesAsyncTask().execute();
-    }
-
-    @Override
-    public void run() {
-
-        listGamesAndJoinFirst();
-        gameForm = new PlayerGameForm(this, this.name);
-        gameForm.initialize();
-
     }
 
     public static void main(String[] args) {

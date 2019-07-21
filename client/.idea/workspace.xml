@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bbb4a4cc-d632-487a-b279-77010a61c221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/api/http/HTTPAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/api/http/HTTPAsyncTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PlayerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/lib/RespondX.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../server/lib/RespondX.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/lib/RespondX.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/lib/RespondX.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/model/response/GetStateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/model/response/GetStateResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/servlets/GetStateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/servlets/GetStateServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,28 +25,40 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="106" column="118" lean-forward="true" selection-start-line="106" selection-start-column="118" selection-end-line="106" selection-end-column="118" />
+            <state relative-caret-position="313">
+              <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1803#1804#0" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
-                <element signature="e#1887#1888#0" expanded="true" />
-                <element signature="e#1919#1920#0" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2014#2015#0" expanded="true" />
                 <element signature="e#2124#2125#0" expanded="true" />
                 <element signature="e#2156#2157#0" expanded="true" />
                 <element signature="e#2189#2190#0" expanded="true" />
                 <element signature="e#2221#2222#0" expanded="true" />
                 <element signature="e#2255#2256#0" expanded="true" />
                 <element signature="e#2288#2289#0" expanded="true" />
-                <element signature="e#2242#2243#0" expanded="true" />
-                <element signature="e#2330#2331#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#2057#2058#0" expanded="true" />
-                <element signature="e#3115#3116#0" expanded="true" />
-                <element signature="e#3216#3217#0" expanded="true" />
+                <element signature="e#2500#2501#0" expanded="true" />
+                <element signature="e#2588#2589#0" expanded="true" />
+                <element signature="e#4267#4268#0" expanded="true" />
+                <element signature="e#4355#4356#0" expanded="true" />
+                <element signature="e#5800#5801#0" expanded="true" />
+                <element signature="e#5901#5902#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+                <element signature="e#2171#2172#0" expanded="true" />
+                <element signature="e#2223#2224#0" expanded="true" />
+                <element signature="e#2274#2275#0" expanded="true" />
+                <element signature="e#2320#2321#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/form/PlayerGameForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="-1115">
+              <caret line="46" column="91" lean-forward="true" selection-start-line="46" selection-start-column="91" selection-end-line="46" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -109,6 +119,8 @@
     <findStrings>
       <find>System.out</find>
       <find>PlayerName</find>
+      <find>new PlayerGamew</find>
+      <find>close</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,11 +138,11 @@
         <option value="$PROJECT_DIR$/src/api/http/RequestMethod.java" />
         <option value="$PROJECT_DIR$/src/api/http/QueryStringBuilder.java" />
         <option value="$PROJECT_DIR$/src/api/API.java" />
-        <option value="$PROJECT_DIR$/src/api/AsyncTask.java" />
         <option value="$PROJECT_DIR$/src/model/StatelessGame.java" />
         <option value="$PROJECT_DIR$/src/ui/MessageDialog.java" />
         <option value="$PROJECT_DIR$/src/api/http/Parameters.java" />
         <option value="$PROJECT_DIR$/src/api/http/ParameterMap.java" />
+        <option value="$PROJECT_DIR$/src/api/AsyncTask.java" />
         <option value="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" />
         <option value="$PROJECT_DIR$/src/ui/PlayerClient.java" />
@@ -153,10 +165,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1156" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +218,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -276,18 +288,19 @@
       <option name="presentableId" value="Default" />
       <updated>1563651198484</updated>
       <workItem from="1563651202034" duration="7237000" />
-      <workItem from="1563658453681" duration="3049000" />
+      <workItem from="1563658453681" duration="3242000" />
+      <workItem from="1563692800231" duration="1540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10286000" />
+    <option name="totallyTimeSpent" value="12019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -324,18 +337,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ui/PlayerClient.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/clients/AdminClient.java" />
@@ -389,30 +390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/MessageDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/API.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -430,10 +411,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+        <state relative-caret-position="138">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2068#2069#0" expanded="true" />
@@ -443,13 +444,6 @@
             <element signature="e#2274#2275#0" expanded="true" />
             <element signature="e#2320#2321#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/form/PlayerGameForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
@@ -463,30 +457,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/form/PlayerGameForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1115">
+          <caret line="46" column="91" lean-forward="true" selection-start-line="46" selection-start-column="91" selection-end-line="46" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="106" column="118" lean-forward="true" selection-start-line="106" selection-start-column="118" selection-end-line="106" selection-end-column="118" />
+        <state relative-caret-position="313">
+          <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#1887#1888#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-            <element signature="e#1974#1975#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
             <element signature="e#2124#2125#0" expanded="true" />
             <element signature="e#2156#2157#0" expanded="true" />
             <element signature="e#2189#2190#0" expanded="true" />
             <element signature="e#2221#2222#0" expanded="true" />
             <element signature="e#2255#2256#0" expanded="true" />
             <element signature="e#2288#2289#0" expanded="true" />
-            <element signature="e#2242#2243#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2057#2058#0" expanded="true" />
-            <element signature="e#3115#3116#0" expanded="true" />
-            <element signature="e#3216#3217#0" expanded="true" />
+            <element signature="e#2500#2501#0" expanded="true" />
+            <element signature="e#2588#2589#0" expanded="true" />
+            <element signature="e#4267#4268#0" expanded="true" />
+            <element signature="e#4355#4356#0" expanded="true" />
+            <element signature="e#5800#5801#0" expanded="true" />
+            <element signature="e#5901#5902#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -28,7 +28,7 @@ public class PlayerGameForm extends JFrame {
         this.buttons = new MinesweeperButton[client.getPartialStatePreference().getHeight()][client.getPartialStatePreference().getWidth()];
         setSize(WINDOW_SIZE, WINDOW_SIZE);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Resizing:
         addComponentListener(new ComponentAdapter() {
