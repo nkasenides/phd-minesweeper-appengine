@@ -1,28 +1,22 @@
 package api.http;
 
-import api.AsyncTask;
-
 import java.io.*;
 import java.net.*;
 import java.util.HashMap;
 
-//TODO Improve based on: https://www.baeldung.com/java-http-request
-public abstract class HTTPAsyncTask extends AsyncTask {
+public abstract class SyncHTTP {
 
-
-
-    //TODO All MIME types as listed here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+    private static final int DEFAULT_CONNECT_TIMEOUT = 10000;
+    private static final int DEFAULT_READ_TIMEOUT = 5000;
 
     private final String url;
     private final HashMap<String, String> params;
     private final RequestMethod requestMethod;
+    private MimeType mimeType = MimeType.CONTENT_TYPE_JSON;
     private int connectTimeout = DEFAULT_CONNECT_TIMEOUT;
     private int readTimeout = DEFAULT_READ_TIMEOUT;
-    private MimeType mimeType = MimeType.CONTENT_TYPE_JSON;
-    private static final int DEFAULT_CONNECT_TIMEOUT = 10000;
-    private static final int DEFAULT_READ_TIMEOUT = 5000;
 
-    public HTTPAsyncTask(String url, ParameterMap params, RequestMethod requestMethod) {
+    public SyncHTTP(String url, ParameterMap params, RequestMethod requestMethod) {
         this.requestMethod = requestMethod;
         this.params = params.get();
         try {
@@ -50,19 +44,17 @@ public abstract class HTTPAsyncTask extends AsyncTask {
         this.readTimeout = readTimeout;
     }
 
-    @Override
-    protected void onPreExecute() { }
+    public void execute() {
 
-    @Override
-    protected void doInBackground() {
         try {
+
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
             con.setRequestMethod(requestMethod.toString());
-            con.setRequestProperty(MimeType.CONTENT_TYPE_KEY, mimeType.getText());
-            con.setConnectTimeout(connectTimeout);
-            con.setReadTimeout(readTimeout);
+            con.setRequestProperty(MimeType.CONTENT_TYPE_KEY, MimeType.CONTENT_TYPE_JSON.getText());
+            con.setConnectTimeout(10000);
+            con.setReadTimeout(10000);
             con.setDoOutput(true);
 
             if (requestMethod == RequestMethod.POST) {
@@ -91,13 +83,10 @@ public abstract class HTTPAsyncTask extends AsyncTask {
             onResponseReceived(content.toString());
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
     protected abstract void onResponseReceived(String response);
-
-    @Override
-    protected void onPostExecute() { }
 
 }

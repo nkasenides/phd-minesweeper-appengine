@@ -4,7 +4,9 @@ import api.API;
 import api.http.HTTPAsyncTask;
 import api.http.ParameterMap;
 import api.http.RequestMethod;
+import api.http.SyncHTTP;
 import com.google.gson.*;
+import com.sun.javafx.collections.NonIterableChange;
 import io.FileManager;
 import model.*;
 import respondx.Response;
@@ -117,6 +119,41 @@ public class PlayerClient implements Runnable {
                             if (gui) gameForm.update();
 
                             while (gameState != GameState.ENDED_WON && gameState != GameState.ENDED_LOST) {
+                                Move move = solver.solve(partialBoardState, PlayerClient.this);
+
+                                class PlayAsyncTask extends SyncHTTP {
+
+                                    public PlayAsyncTask(ParameterMap params) {
+                                        super(API.PLAY_ENDPOINT, params, RequestMethod.GET);
+                                    }
+
+                                    @Override
+                                    protected void onResponseReceived(String response) {
+                                        if (DEBUG) System.out.println(response);
+                                        Gson gson = new Gson();
+                                        try {
+                                            Response jsonResponse = gson.fromJson(response, Response.class);
+                                            if (jsonResponse.getStatus() != OK) {
+                                                MessageDialog.showInfo(jsonResponse.getTitle(), jsonResponse.getMessage());
+                                            }
+                                            else {
+                                                System.out.println(jsonResponse.getMessage());
+                                                JsonObject data = jsonResponse.getData();
+                                                PlayerClient.this.gameState = GameState.valueOf(data.get("gameState").getAsString());
+                                            }
+                                        }
+                                        catch (JsonSyntaxException e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }
+                                }
+
+                                ParameterMap params = new ParameterMap();
+                                params.add("sessionID", sessionID);
+                                params.add("move", move.getMoveType().toString());
+                                params.add("row", String.valueOf(move.getRow()));
+                                params.add("col", String.valueOf(move.getCol()));
+                                new PlayAsyncTask(params).execute();
 
                             }
 

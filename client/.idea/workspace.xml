@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/api/http/SyncHTTP.java" line="2" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb4a4cc-d632-487a-b279-77010a61c221" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/http/MimeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/http/SyncHTTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/MoveType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/RandomSolver$1UnrevealedCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/RandomSolver$1UnrevealedCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/RandomSolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/RandomSolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/Solver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/solvers/Solver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solvers/RandomSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solvers/RandomSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solvers/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solvers/Solver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PlayerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/model/response/GetStateResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/model/response/GetStateResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/servlets/GetStateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/servlets/GetStateServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+            <state relative-caret-position="-34">
+              <caret line="123" column="65" lean-forward="true" selection-start-line="123" selection-start-column="65" selection-end-line="123" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2124#2125#0" expanded="true" />
@@ -46,11 +60,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api/http/SyncHTTP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#1187#1188#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
+                <element signature="e#1296#1297#0" expanded="true" />
+                <element signature="e#1347#1348#0" expanded="true" />
+                <element signature="e#1393#1394#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="68">
+              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2068#2069#0" expanded="true" />
@@ -67,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/solvers/RandomSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+            <state relative-caret-position="347">
+              <caret line="82" column="98" selection-start-line="82" selection-start-column="98" selection-end-line="82" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,6 +143,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -121,6 +154,7 @@
       <find>PlayerName</find>
       <find>new PlayerGamew</find>
       <find>close</find>
+      <find>FLAG_UNFLAG</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,8 +166,6 @@
         <option value="$PROJECT_DIR$/src/clients/PlayerClient.java" />
         <option value="$PROJECT_DIR$/src/clients/AdminClient.java" />
         <option value="$PROJECT_DIR$/src/simulation/SimulationManager.java" />
-        <option value="$PROJECT_DIR$/src/solvers/Solver.java" />
-        <option value="$PROJECT_DIR$/src/solvers/RandomSolver.java" />
         <option value="$PROJECT_DIR$/src/api/HTTPAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/api/http/RequestMethod.java" />
         <option value="$PROJECT_DIR$/src/api/http/QueryStringBuilder.java" />
@@ -143,9 +175,17 @@
         <option value="$PROJECT_DIR$/src/api/http/Parameters.java" />
         <option value="$PROJECT_DIR$/src/api/http/ParameterMap.java" />
         <option value="$PROJECT_DIR$/src/api/AsyncTask.java" />
-        <option value="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/ui/form/PlayerGameForm.java" />
+        <option value="$PROJECT_DIR$/src/model/Move.java" />
+        <option value="$PROJECT_DIR$/src/model/MoveType.java" />
+        <option value="$PROJECT_DIR$/src/solvers/Solver.java" />
+        <option value="$PROJECT_DIR$/src/solvers/RandomSolver.java" />
+        <option value="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" />
+        <option value="$PROJECT_DIR$/src/api/http/HTTP.java" />
+        <option value="$PROJECT_DIR$/src/api/http/MimeType.java" />
+        <option value="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/ui/PlayerClient.java" />
+        <option value="$PROJECT_DIR$/src/api/http/SyncHTTP.java" />
       </list>
     </option>
   </component>
@@ -154,15 +194,6 @@
       <expand />
       <select />
     </treeState>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/libraries/RespondX.xml" />
-        <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      </list>
-    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1156" />
@@ -207,6 +238,12 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="solvers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
@@ -289,18 +326,18 @@
       <updated>1563651198484</updated>
       <workItem from="1563651202034" duration="7237000" />
       <workItem from="1563658453681" duration="3242000" />
-      <workItem from="1563692800231" duration="1540000" />
+      <workItem from="1563692800231" duration="4824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12019000" />
+    <option name="totallyTimeSpent" value="15303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -309,7 +346,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -344,16 +381,6 @@
     <entry file="file://$PROJECT_DIR$/src/clients/PlayerClient.java" />
     <entry file="file://$PROJECT_DIR$/src/ui/form/AdminGameForm.form" />
     <entry file="file://$PROJECT_DIR$/src/ui/form/AdminGameForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/solvers/Solver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/http/RequestMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -431,10 +458,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/form/PlayerGameForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1115">
+          <caret line="46" column="91" lean-forward="true" selection-start-line="46" selection-start-column="91" selection-end-line="46" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/solvers/Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/solvers/RandomSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="82" column="98" selection-start-line="82" selection-start-column="98" selection-end-line="82" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/MoveType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/http/QueryStringMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/http/MimeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="68">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2068#2069#0" expanded="true" />
@@ -447,27 +553,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/solvers/RandomSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/form/PlayerGameForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1115">
-          <caret line="46" column="91" lean-forward="true" selection-start-line="46" selection-start-column="91" selection-end-line="46" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="119" column="32" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+        <state relative-caret-position="-34">
+          <caret line="123" column="65" lean-forward="true" selection-start-line="123" selection-start-column="65" selection-end-line="123" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2124#2125#0" expanded="true" />
@@ -482,6 +571,22 @@
             <element signature="e#4355#4356#0" expanded="true" />
             <element signature="e#5800#5801#0" expanded="true" />
             <element signature="e#5901#5902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/http/SyncHTTP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="e#1393#1394#0" expanded="true" />
           </folding>
         </state>
       </provider>
