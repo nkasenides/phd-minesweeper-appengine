@@ -8,6 +8,10 @@ import api.http.SyncHTTP;
 import com.google.gson.*;
 import com.sun.javafx.collections.NonIterableChange;
 import io.FileManager;
+import io.ably.lib.realtime.AblyRealtime;
+import io.ably.lib.realtime.Channel;
+import io.ably.lib.types.AblyException;
+import io.ably.lib.types.Message;
 import model.*;
 import respondx.Response;
 import solvers.RandomSolver;
@@ -46,6 +50,8 @@ public class PlayerClient implements Runnable {
     private GameState gameState;
     private PartialBoardState partialBoardState;
 
+    AblyRealtime ably;
+
     private long commandSent = 0;
     private int movesMade = 0;
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd@HHmm-ss");
@@ -56,6 +62,20 @@ public class PlayerClient implements Runnable {
         this.name = name;
         this.solver = solver;
         this.partialStatePreference = partialStatePreference;
+        try {
+            ably = new AblyRealtime("U4YruA.ehwdkQ:COJkxxIrPJo3DeLX");
+            Channel channel = ably.channels.get("gameState-" + name);
+            channel.subscribe(new Channel.MessageListener() {
+                @Override
+                public void onMessage(Message message) {
+                    System.out.println("Received `" + message.name + "` message with data: " + message.data);
+                    partialBoardState = new Gson().fromJson((String) message.data, PartialBoardState.class);
+                }
+            });
+
+        } catch (AblyException e) {
+            e.printStackTrace();
+        }
 //        FileManager.createDirectory(dirName, false);
     }
 

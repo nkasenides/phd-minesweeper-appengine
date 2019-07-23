@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="RespondX" level="project" />
+    <orderEntry type="library" name="ably-java-1.0.7" level="project" />
   </component>
 </module>
