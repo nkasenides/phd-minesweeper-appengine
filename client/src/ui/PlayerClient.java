@@ -62,20 +62,6 @@ public class PlayerClient implements Runnable {
         this.name = name;
         this.solver = solver;
         this.partialStatePreference = partialStatePreference;
-        try {
-            ably = new AblyRealtime("U4YruA.ehwdkQ:COJkxxIrPJo3DeLX");
-            Channel channel = ably.channels.get("gameState-" + name);
-            channel.subscribe(new Channel.MessageListener() {
-                @Override
-                public void onMessage(Message message) {
-                    System.out.println("Received `" + message.name + "` message with data: " + message.data);
-                    partialBoardState = new Gson().fromJson((String) message.data, PartialBoardState.class);
-                }
-            });
-
-        } catch (AblyException e) {
-            e.printStackTrace();
-        }
 //        FileManager.createDirectory(dirName, false);
     }
 
@@ -157,9 +143,11 @@ public class PlayerClient implements Runnable {
                                                 MessageDialog.showInfo(jsonResponse.getTitle(), jsonResponse.getMessage());
                                             }
                                             else {
-                                                System.out.println(jsonResponse.getMessage());
-                                                JsonObject data = jsonResponse.getData();
-                                                PlayerClient.this.gameState = GameState.valueOf(data.get("gameState").getAsString());
+                                                if (!jsonResponse.getTitle().equals("Cell already revealed")) {
+                                                    System.out.println(jsonResponse.getMessage());
+                                                    JsonObject data = jsonResponse.getData();
+                                                    PlayerClient.this.gameState = GameState.valueOf(data.get("gameState").getAsString());
+                                                }
                                             }
                                         }
                                         catch (JsonSyntaxException e) {
@@ -210,6 +198,24 @@ public class PlayerClient implements Runnable {
                         JsonObject data = jsonResponse.getData();
                         PlayerClient.this.sessionID = data.get("sessionID").getAsString();
                         System.out.println("SessionID -> " + sessionID);
+
+                        //Also register on Ably channel:
+                        try {
+                            ably = new AblyRealtime("U4YruA.ehwdkQ:COJkxxIrPJo3DeLX");
+                            final String channelName = "gameState-" + sessionID;
+                            System.out.println(channelName);
+                            Channel channel = ably.channels.get(channelName);
+                            channel.subscribe(new Channel.MessageListener() {
+                                @Override
+                                public void onMessage(Message message) {
+                                    System.out.println("Received `" + message.name + "` message with data: " + message.data);
+                                    partialBoardState = new Gson().fromJson((String) message.data, PartialBoardState.class);
+                                }
+                            });
+
+                        } catch (AblyException e) {
+                            e.printStackTrace();
+                        }
 
                         ParameterMap params = new ParameterMap();
                         params.add("sessionID", sessionID);
