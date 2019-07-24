@@ -10,6 +10,7 @@ import model.exception.InvalidCellReferenceException;
 import model.response.MissingParameterResponse;
 import model.response.PlayResponse;
 import respondx.ErrorResponse;
+import respondx.SuccessResponse;
 import util.APIUtils;
 
 import javax.servlet.ServletException;
@@ -26,7 +27,7 @@ public class PlayServlet extends HttpServlet {
     private AblyRealtime ably;
     private Channel channel;
 
-    PlayServlet() {
+    public PlayServlet() {
         try {
             ably = new AblyRealtime("U4YruA.ehwdkQ:COJkxxIrPJo3DeLX");
         } catch (AblyException e) {
@@ -34,7 +35,7 @@ public class PlayServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         APIUtils.setResponseHeader(response);
 
@@ -133,7 +134,7 @@ public class PlayServlet extends HttpServlet {
 
                 //Check if already revealed:
                 if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED) {
-                    response.getWriter().write(new ErrorResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
+                    response.getWriter().write(new SuccessResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
                     return;
                 }
 
@@ -174,7 +175,7 @@ public class PlayServlet extends HttpServlet {
 
                 //Check if already revealed:
                 if (fullBoardState.getCells()[row][col].getRevealState() != RevealState.COVERED && fullBoardState.getCells()[row][col].getRevealState() != RevealState.FLAGGED) {
-                    response.getWriter().write(new ErrorResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
+                    response.getWriter().write(new SuccessResponse("Cell already revealed", "The cell (" + row + "," + col + ") has already been revealed.").toJSON());
                     return;
                 }
 
@@ -221,7 +222,7 @@ public class PlayServlet extends HttpServlet {
         final List<Session> allSessions = ofy().load().type(Session.class).list();
         for (Session s : allSessions) {
             try {
-                Channel channel = ably.channels.get("gameState-" + s.getPlayerName());
+                Channel channel = ably.channels.get("gameState-" + s.getSessionID());
                 PartialBoardState partialState = new PartialBoardState(s.getPartialStatePreference().getWidth(), s.getPartialStatePreference().getHeight(), s.getPositionRow(), s.getPositionCol(), game.getFullBoardState());
                 String json = new Gson().toJson(partialState);
                 channel.publish("state", json);

@@ -7,13 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb97e85-693c-4402-af10-c4d4429fd8a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/.idea/libraries/Java_WebSocket_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/libraries/ably_java_1_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/libraries/io_zeebe_zb_msgpack_core_0_16_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_WebSocket_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ably_java_1_0_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.idea/libraries/Ably.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Ably.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/libraries/ably_java_1_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/libraries/io_zeebe_zb_msgpack_core_0_16_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/Minesweeper Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Minesweeper Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask$1PlayAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask$1PlayAsyncTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1GetStateAsyncTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" afterDir="false" />
@@ -21,12 +21,9 @@
       <change beforePath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/Minesweeper Client/ui/PlayerClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/ui/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ui/PlayerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/Minesweeper_Server_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Minesweeper_Server_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ably_java_1_0_7.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minesweeper Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Minesweeper Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Server/servlets/PlayServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlets/PlayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlets/PlayServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -53,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="205" column="44" selection-start-line="205" selection-start-column="44" selection-end-line="205" selection-end-column="44" />
+            <state relative-caret-position="391">
+              <caret line="229" column="37" lean-forward="true" selection-start-line="229" selection-start-column="37" selection-end-line="229" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -204,17 +201,13 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Minesweeper Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Minesweeper Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Minesweeper Server" type="b2602c69:ProjectViewProjectNode" />
@@ -267,7 +260,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,7 +270,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client/lib/Java-WebSocket-1.3.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client/lib/msgpack-core-0.8.11.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -374,12 +366,22 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35185000" />
+    <option name="totallyTimeSpent" value="38063000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49757674" visible="true" weight="0.18336888" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49757674" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -393,12 +395,12 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info active="true" anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.33044422" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3261105" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
@@ -755,10 +757,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/../client/lib/ably-java-1.0.1-sources.jar!/io/ably/lib/realtime/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1691">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlets/PlayServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="205" column="44" selection-start-line="205" selection-start-column="44" selection-end-line="205" selection-end-column="44" />
+        <state relative-caret-position="391">
+          <caret line="229" column="37" lean-forward="true" selection-start-line="229" selection-start-column="37" selection-end-line="229" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -827,7 +836,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Java-WebSocket-1.3.1</last-edited>
+          <last-edited>Ably</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
