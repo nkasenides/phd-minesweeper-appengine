@@ -16,7 +16,7 @@ public class Session {
     private PartialStatePreference partialStatePreference;
     @Index private String playerName;
     @Index private String gameToken;
-    private Key<Game> gameKey;
+    @Index private Key<Game> gameKey;
     private int positionCol;
     private int positionRow;
     private boolean spectator;

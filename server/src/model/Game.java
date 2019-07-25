@@ -10,6 +10,8 @@ import model.exception.InvalidCellReferenceException;
 import java.beans.Transient;
 import java.util.*;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 @Entity
 public class Game {
 
@@ -135,9 +137,7 @@ public class Game {
         return count;
     }
 
-    public void computeGameState() {
-        Gson gson = new Gson();
-        FullBoardState fullBoardState = gson.fromJson(boardState, FullBoardState.class);
+    private void computeGameState(FullBoardState fullBoardState) {
 
         if (gameState == GameState.STARTED) {
             int covered = 0;
@@ -172,8 +172,8 @@ public class Game {
                 return;
             }
 
-            gameState = GameState.STARTED;
         }
+
     }
 
     public void revealAll() {
@@ -195,7 +195,7 @@ public class Game {
     public RevealState reveal(int row, int col) {
         FullBoardState fullBoardState = gson.fromJson(boardState, FullBoardState.class);
         RevealState revealState = doReveal(fullBoardState, row, col);
-        computeGameState();
+        computeGameState(fullBoardState);
         boardState = gson.toJson(fullBoardState);
         return revealState;
     }
@@ -284,7 +284,7 @@ public class Game {
         else if (fullBoardState.getCells()[row][col].getRevealState() == RevealState.FLAGGED) {
             referencedCell.setRevealState(RevealState.COVERED);
         }
-        computeGameState();
+        computeGameState(fullBoardState);
         boardState = gson.toJson(fullBoardState);
     }
 

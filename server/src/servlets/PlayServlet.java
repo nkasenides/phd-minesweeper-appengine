@@ -1,12 +1,12 @@
 package servlets;
 
-import com.google.appengine.repackaged.org.joda.time.Partial;
 import com.google.gson.Gson;
 import io.ably.lib.realtime.AblyRealtime;
 import io.ably.lib.realtime.Channel;
 import io.ably.lib.types.AblyException;
 import model.*;
 import model.exception.InvalidCellReferenceException;
+import model.response.GameMessage;
 import model.response.MissingParameterResponse;
 import model.response.PlayResponse;
 import respondx.ErrorResponse;
@@ -19,10 +19,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
 public class PlayServlet extends HttpServlet {
+
+    private final Logger logger = Logger.getLogger(PlayServlet.class.getName());
 
     private AblyRealtime ably;
     private Channel channel;
@@ -167,7 +171,7 @@ public class PlayServlet extends HttpServlet {
                 ofy().save().entity(session);
 
                 //Respond:
-                sendNewState(game);
+                publishStateToAllPlayers(game);
                 response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
                 return;
 
@@ -186,7 +190,7 @@ public class PlayServlet extends HttpServlet {
                 ofy().save().entity(game);
                 ofy().save().entity(session);
 
-                sendNewState(game);
+                publishStateToAllPlayers(game);
                 response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
                 return;
 
@@ -209,6 +213,7 @@ public class PlayServlet extends HttpServlet {
                 //Save the session:
                 ofy().save().entity(session);
 
+                publishStateToPlayer(game, session);
                 response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
                 return;
         }
@@ -218,21 +223,31 @@ public class PlayServlet extends HttpServlet {
 
     //This currently sends the new state to ALL players once any place in the board has been changes. Ideally, we would want
     //only those who have partial states intersecting with the changed cell to be updated.
-    private void sendNewState(final Game game) {
-        final List<Session> allSessions = ofy().load().type(Session.class).list();
-        for (Session s : allSessions) {
-            try {
-                Channel channel = ably.channels.get("gameState-" + s.getSessionID());
-                PartialBoardState partialState = new PartialBoardState(s.getPartialStatePreference().getWidth(), s.getPartialStatePreference().getHeight(), s.getPositionRow(), s.getPositionCol(), game.getFullBoardState());
-                String json = new Gson().toJson(partialState);
-                channel.publish("state", json);
-            }
-            catch (AblyException e) {
-                throw new RuntimeException (e);
-            }
-            catch (InvalidCellReferenceException e) {
-                throw new RuntimeException (e);
-            }
+    private void publishStateToAllPlayers(final Game game) {
+        final List<Session> allSessions = ofy().load().type(Session.class).filter("gameKey", game.getKey()).list();
+        logger.log(Level.INFO, "Number of sessions found for this game: " + allSessions.size());
+        for (final Session session : allSessions) {
+            publishStateToPlayer(game, session);
+        }
+    }
+
+    //Publishes the state of the game to the player with the given session ID
+    private void publishStateToPlayer(final Game game, final Session session) {
+        try {
+            final String channelName = "gameState-" + session.getSessionID();
+            Channel channel = ably.channels.get(channelName);
+            final GameState gameState = game.getGameState();
+            final PartialBoardState partialState = new PartialBoardState(session.getPartialStatePreference().getWidth(), session.getPartialStatePreference().getHeight(), session.getPositionRow(), session.getPositionCol(), game.getFullBoardState());
+            GameMessage message = new GameMessage(gameState, partialState);
+            String json = message.toJson();
+            channel.publish("state", json);
+            logger.log(Level.INFO, "Published state to channel with name " + channelName);
+        }
+        catch (AblyException e) {
+            throw new RuntimeException (e);
+        }
+        catch (InvalidCellReferenceException e) {
+            throw new RuntimeException (e);
         }
     }
 
