@@ -146,7 +146,7 @@ public class PlayerClient implements Runnable {
                                                 if (!jsonResponse.getTitle().equals("Cell already revealed")) {
                                                     System.out.println(jsonResponse.getMessage());
                                                     JsonObject data = jsonResponse.getData();
-                                                    PlayerClient.this.gameState = GameState.valueOf(data.get("gameState").getAsString());
+                                                    gameState = GameState.valueOf(data.get("gameState").getAsString());
                                                 }
                                             }
                                         }
@@ -209,7 +209,10 @@ public class PlayerClient implements Runnable {
                                 @Override
                                 public void onMessage(Message message) {
                                     System.out.println("Received `" + message.name + "` message with data: " + message.data);
-                                    partialBoardState = new Gson().fromJson((String) message.data, PartialBoardState.class);
+                                    GameMessage gameMessage = new Gson().fromJson((String) message.data, GameMessage.class);
+                                    partialBoardState = gameMessage.getPartialBoardState();
+                                    gameState = gameMessage.getGameState();
+                                    gameForm.update();
                                 }
                             });
 
@@ -245,11 +248,16 @@ public class PlayerClient implements Runnable {
                         MessageDialog.showInfo(jsonResponse.getTitle(), jsonResponse.getMessage());
                     }
                     else {
-                        JsonObject data = jsonResponse.getData();
-                        JsonArray jsonGames = data.getAsJsonArray("games");
-                        for (JsonElement e : jsonGames) {
-                            StatelessGame game = gson.fromJson(e, StatelessGame.class);
-                            games.add(game);
+                        if (jsonResponse.getMessage().equals("No games found")) {
+                            MessageDialog.showInfo(jsonResponse.getTitle(), jsonResponse.getMessage());
+                        }
+                        else {
+                            JsonObject data = jsonResponse.getData();
+                            JsonArray jsonGames = data.getAsJsonArray("games");
+                            for (JsonElement e : jsonGames) {
+                                StatelessGame game = gson.fromJson(e, StatelessGame.class);
+                                games.add(game);
+                            }
                         }
                     }
 
