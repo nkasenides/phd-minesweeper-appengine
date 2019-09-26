@@ -323,6 +323,11 @@ public class PlayerClient implements Runnable {
                         }
                     }
 
+                    if (games.size() < 1) {
+                        System.out.println("No games found!");
+                        return;
+                    }
+
                     ParameterMap parameterMap = new ParameterMap();
                     parameterMap.add("gameToken", games.get(0).getToken());
                     parameterMap.add("playerName", name);
