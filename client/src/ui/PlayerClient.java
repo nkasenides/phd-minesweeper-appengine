@@ -1,32 +1,33 @@
 package ui;
 
-import api.API;
-import api.http.HTTPAsyncTask;
-import api.http.ParameterMap;
-import api.http.RequestMethod;
-import api.http.SyncHTTP;
-import com.google.gson.*;
-import com.sun.javafx.collections.NonIterableChange;
-import io.FileManager;
-import io.ably.lib.realtime.AblyRealtime;
-import io.ably.lib.realtime.Channel;
-import io.ably.lib.types.AblyException;
-import io.ably.lib.types.Message;
-import model.*;
-import respondx.Response;
-import solvers.RandomSolver;
-import solvers.Solver;
-import ui.form.PlayerGameForm;
+        import api.API;
+        import api.RequestEndpoint;
+        import api.http.HTTPAsyncTask;
+        import api.http.ParameterMap;
+        import api.http.RequestMethod;
+        import api.http.SyncHTTP;
+        import com.google.gson.*;
+        import com.sun.javafx.collections.NonIterableChange;
+        import io.FileManager;
+        import io.ably.lib.realtime.AblyRealtime;
+        import io.ably.lib.realtime.Channel;
+        import io.ably.lib.types.AblyException;
+        import io.ably.lib.types.Message;
+        import model.*;
+        import respondx.Response;
+        import solvers.RandomSolver;
+        import solvers.Solver;
+        import ui.form.PlayerGameForm;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.*;
+        import java.io.BufferedReader;
+        import java.io.IOException;
+        import java.io.InputStreamReader;
+        import java.io.PrintWriter;
+        import java.net.Socket;
+        import java.text.SimpleDateFormat;
+        import java.util.*;
 
-import static respondx.ResponseStatus.OK;
+        import static respondx.ResponseStatus.OK;
 
 public class PlayerClient implements Runnable {
 
@@ -52,17 +53,32 @@ public class PlayerClient implements Runnable {
 
     AblyRealtime ably;
 
-    private long commandSent = 0;
+    //Simulation:
+    class LatencyMeasurement {
+        public LatencyMeasurement(int activePlayers, RequestEndpoint requestEndpoint, Long latency) {
+            this.activePlayers = activePlayers;
+            this.latency = latency;
+            this.requestEndpoint = requestEndpoint;
+        }
+        public int activePlayers;
+        public Long latency;
+        public RequestEndpoint requestEndpoint;
+    }
+    private ArrayList<LatencyMeasurement> latencyMeasurements = new ArrayList<>();
+    private long lastResponseSentTimestamp = 0;
+    private long lastResponseReceivedTimestamp = 0;
+    private RequestEndpoint lastResponseEndpoint = null;
     private int movesMade = 0;
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd@HHmm-ss");
-    private static final String filename = simpleDateFormat.format(new Date()) + ".csv";
-    private final String dirName = "Simulations";
+    private final String filename;
+    private static final String dirName = "Simulations";
 
     public PlayerClient(String name, PartialStatePreference partialStatePreference, Solver solver) throws IOException {
         this.name = name;
         this.solver = solver;
+        this.filename = simpleDateFormat.format(new Date()) + "_" + name + ".csv";
         this.partialStatePreference = partialStatePreference;
-//        FileManager.createDirectory(dirName, false);
+        FileManager.createDirectory(dirName, false);
     }
 
     public PartialStatePreference getPartialStatePreference() {
@@ -95,6 +111,7 @@ public class PlayerClient implements Runnable {
 
     @Override
     public void run() {
+
         class GetStateAsyncTask extends HTTPAsyncTask {
 
             public GetStateAsyncTask(ParameterMap params) {
@@ -103,6 +120,13 @@ public class PlayerClient implements Runnable {
 
             @Override
             protected void onResponseReceived(String response) {
+
+                //STATE_GET ENDPOINT SIM RESPONSE
+                lastResponseReceivedTimestamp = System.currentTimeMillis();
+                if (lastResponseEndpoint == RequestEndpoint.STATE_GET) {
+                    latencyMeasurements.add(new LatencyMeasurement(0, RequestEndpoint.STATE_GET, lastResponseReceivedTimestamp - lastResponseSentTimestamp));
+                }
+
                 if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
@@ -135,6 +159,13 @@ public class PlayerClient implements Runnable {
 
                                     @Override
                                     protected void onResponseReceived(String response) {
+
+                                        //PLAY ENDPOINT SIM RESPONSE
+                                        lastResponseReceivedTimestamp = System.currentTimeMillis();
+                                        if (lastResponseEndpoint == RequestEndpoint.PLAY) {
+                                            latencyMeasurements.add(new LatencyMeasurement(0, RequestEndpoint.PLAY, lastResponseReceivedTimestamp - lastResponseSentTimestamp));
+                                        }
+
                                         if (DEBUG) System.out.println(response);
                                         Gson gson = new Gson();
                                         try {
@@ -161,9 +192,17 @@ public class PlayerClient implements Runnable {
                                 params.add("move", move.getMoveType().toString());
                                 params.add("row", String.valueOf(move.getRow()));
                                 params.add("col", String.valueOf(move.getCol()));
+
+                                //PLAY ENDPOINT SIM REQUEST
+                                lastResponseEndpoint = RequestEndpoint.PLAY;
+                                lastResponseSentTimestamp = System.currentTimeMillis();
                                 new PlayAsyncTask(params).execute();
 
                             }
+
+                            writeData();
+
+                            System.exit(0);
 
                         } catch (JsonSyntaxException e) {
                             throw new RuntimeException(e);
@@ -184,6 +223,13 @@ public class PlayerClient implements Runnable {
 
             @Override
             protected void onResponseReceived(String response) {
+
+                //JOIN ENDPOINT SIM RESPONSE
+                lastResponseReceivedTimestamp = System.currentTimeMillis();
+                if (lastResponseEndpoint == RequestEndpoint.JOIN) {
+                    latencyMeasurements.add(new LatencyMeasurement(0, RequestEndpoint.JOIN, lastResponseReceivedTimestamp - lastResponseSentTimestamp));
+                }
+
                 if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
@@ -208,7 +254,11 @@ public class PlayerClient implements Runnable {
                             channel.subscribe(new Channel.MessageListener() {
                                 @Override
                                 public void onMessage(Message message) {
-                                    System.out.println("Received `" + message.name + "` message with data: " + message.data);
+
+                                    //Push message latency:
+                                    latencyMeasurements.add(new LatencyMeasurement(0, RequestEndpoint.PUSH_MESSAGE, System.currentTimeMillis() - getLastPlayRequestTimestamp()));
+
+                                    System.out.println("Ably - Received `" + message.name + "` message with data: " + message.data);
                                     GameMessage gameMessage = new Gson().fromJson((String) message.data, GameMessage.class);
                                     partialBoardState = gameMessage.getPartialBoardState();
                                     gameState = gameMessage.getGameState();
@@ -222,6 +272,11 @@ public class PlayerClient implements Runnable {
 
                         ParameterMap params = new ParameterMap();
                         params.add("sessionID", sessionID);
+
+                        //GET_STATE ENDPOINT SIM REQUEST
+                        lastResponseEndpoint = RequestEndpoint.STATE_GET;
+                        lastResponseSentTimestamp = System.currentTimeMillis();
+
                         new GetStateAsyncTask(params).execute();
 
                     }
@@ -240,6 +295,13 @@ public class PlayerClient implements Runnable {
 
             @Override
             protected void onResponseReceived(String response) {
+
+                //LIST ENDPOINT SIM RESPONSE
+                lastResponseReceivedTimestamp = System.currentTimeMillis();
+                if (lastResponseEndpoint == RequestEndpoint.GAME_LIST) {
+                    latencyMeasurements.add(new LatencyMeasurement(0, RequestEndpoint.GAME_LIST, lastResponseReceivedTimestamp - lastResponseSentTimestamp));
+                }
+
                 if (DEBUG) System.out.println(response);
                 Gson gson = new Gson();
                 try {
@@ -266,6 +328,11 @@ public class PlayerClient implements Runnable {
                     parameterMap.add("playerName", name);
                     parameterMap.add("partialStateWidth", "5");
                     parameterMap.add("partialStateHeight", "5");
+
+                    //JOIN ENDPOINT SIM REQUEST
+                    lastResponseEndpoint = RequestEndpoint.JOIN;
+                    lastResponseSentTimestamp = System.currentTimeMillis();
+
                     new JoinGameAsyncTask(parameterMap).execute();
 
                 }
@@ -275,11 +342,53 @@ public class PlayerClient implements Runnable {
             }
         }
 
+        //LIST ENDPOINT SIM REQUEST
+        lastResponseEndpoint = RequestEndpoint.GAME_LIST;
+        lastResponseSentTimestamp = System.currentTimeMillis();
+
         new ListGamesAsyncTask().execute();
+
+    }
+
+    private long getLastPlayRequestTimestamp() {
+        for (int i = latencyMeasurements.size() - 1; i > 0; i--) {
+            if (latencyMeasurements.get(i).requestEndpoint == RequestEndpoint.PLAY) {
+                return latencyMeasurements.get(i).latency;
+            }
+        }
+        return -1;
+    }
+
+    private static void writeData() {
+        for (PlayerClient p : clients) {
+            //Write data to file:
+            if (FileManager.fileIsDirectory(dirName)) {
+                //Write to file:
+                try {
+
+                    StringBuilder builder = new StringBuilder();
+
+                    builder.append("players,endpoint,latency").append(System.lineSeparator());
+                    for (LatencyMeasurement m : p.latencyMeasurements) {
+                        builder.append(m.activePlayers).append(",").append(m.requestEndpoint.toString()).append(",").append(m.latency).append(System.lineSeparator());
+                    }
+
+                    FileManager.writeFile(dirName + "/" + p.filename, builder.toString(), true);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Failed to write results to file - directory 'Simulations' could not be created.");
+            }
+        }
     }
 
     public static void main(String[] args) {
+
+
         final int numOfClients = 2;
+        final int joinDelay = 500;
 
         clients = new PlayerClient[numOfClients];
 
@@ -296,6 +405,13 @@ public class PlayerClient implements Runnable {
         for (int i = 0; i < numOfClients; i++) {
             threads[i] = new Thread(clients[i]);
             threads[i].start();
+
+            try {
+                Thread.sleep(joinDelay);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             System.out.println(clients[i].getName() + " started!");
         }
 

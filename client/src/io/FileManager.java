@@ -4,9 +4,14 @@ import java.io.*;
 
 public class FileManager {
 
-    public static void writeFile(String path, String content) throws IOException {
+    public static void writeFile(String path, String content, boolean append) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-        writer.write(content);
+        if (append) {
+            writer.append(content);
+        }
+        else {
+            writer.write(content);
+        }
         writer.close();
     }
 

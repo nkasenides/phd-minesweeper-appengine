@@ -5,36 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbb4a4cc-d632-487a-b279-77010a61c221" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/eight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/five.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/flag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/four.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/one.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/seven.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/six.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/three.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/two.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/GameMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/src/model/response/GameMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/RequestEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/servlets/BaseServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1JoinGameAsyncTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient$1ListGamesAsyncTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Minesweeper Client/ui/PlayerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameSpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/PlayerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PlayerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/model/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/classes/servlets/PlayServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/model/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/model/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/servlets/PlayServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/servlets/PlayServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/servlets/PlayServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/Minesweeper Server/servlets/PlayServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/servlets/PlayServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/servlets/PlayServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/Minesweeper_Server_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +28,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+            <state relative-caret-position="435">
+              <caret line="264" column="54" selection-start-line="264" selection-start-column="54" selection-end-line="264" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2985#2986#0" expanded="true" />
+                <element signature="e#3030#3031#0" expanded="true" />
+                <element signature="e#3069#3070#0" expanded="true" />
+                <element signature="e#3101#3102#0" expanded="true" />
+                <element signature="e#3156#3157#0" expanded="true" />
+                <element signature="e#3196#3197#0" expanded="true" />
+                <element signature="e#3232#3233#0" expanded="true" />
+                <element signature="e#3264#3265#0" expanded="true" />
+                <element signature="e#3297#3298#0" expanded="true" />
+                <element signature="e#3329#3330#0" expanded="true" />
+                <element signature="e#3363#3364#0" expanded="true" />
+                <element signature="e#3396#3397#0" expanded="true" />
+                <element signature="e#3427#3428#0" expanded="true" />
+                <element signature="e#3454#3455#0" expanded="true" />
+                <element signature="e#3611#3612#0" expanded="true" />
+                <element signature="e#3699#3700#0" expanded="true" />
+                <element signature="e#9093#9094#0" expanded="true" />
+                <element signature="e#9181#9182#0" expanded="true" />
+                <element signature="e#12704#12705#0" expanded="true" />
+                <element signature="e#12805#12806#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1601-06_Player1.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1601-06_Player2.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,10 +89,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/GameMessage.java">
+        <entry file="file://$PROJECT_DIR$/src/api/AsyncTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="285">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/http/QueryStringMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/StatelessGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#507#508#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/GameSpecification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="e#902#903#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1051#1052#0" expanded="true" />
+                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#1119#1120#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1193#1194#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,6 +167,7 @@
       <find>FLAG_UNFLAG</find>
       <find>Ably</find>
       <find>received</find>
+      <find>ably</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/api/http/RequestMethod.java" />
         <option value="$PROJECT_DIR$/src/api/http/QueryStringBuilder.java" />
         <option value="$PROJECT_DIR$/src/api/API.java" />
-        <option value="$PROJECT_DIR$/src/model/StatelessGame.java" />
         <option value="$PROJECT_DIR$/src/ui/MessageDialog.java" />
         <option value="$PROJECT_DIR$/src/api/http/Parameters.java" />
         <option value="$PROJECT_DIR$/src/api/http/ParameterMap.java" />
@@ -113,12 +192,16 @@
         <option value="$PROJECT_DIR$/src/model/MoveType.java" />
         <option value="$PROJECT_DIR$/src/solvers/Solver.java" />
         <option value="$PROJECT_DIR$/src/solvers/RandomSolver.java" />
-        <option value="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" />
         <option value="$PROJECT_DIR$/src/api/http/HTTP.java" />
         <option value="$PROJECT_DIR$/src/api/http/MimeType.java" />
         <option value="$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java" />
         <option value="$PROJECT_DIR$/src/api/http/SyncHTTP.java" />
         <option value="$PROJECT_DIR$/src/model/GameMessage.java" />
+        <option value="$PROJECT_DIR$/src/api/RequestEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/io/FileManager.java" />
+        <option value="$PROJECT_DIR$/src/model/GameSpecification.java" />
+        <option value="$PROJECT_DIR$/src/api/http/QueryStringMaker.java" />
+        <option value="$PROJECT_DIR$/src/model/StatelessGame.java" />
         <option value="$PROJECT_DIR$/src/ui/PlayerClient.java" />
       </list>
     </option>
@@ -141,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,7 +235,18 @@
             <path>
               <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="Simulations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Minesweeper Client" type="b2602c69:ProjectViewProjectNode" />
@@ -176,7 +271,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -259,16 +353,19 @@
       <workItem from="1563872054397" duration="3385000" />
       <workItem from="1563951809800" duration="3948000" />
       <workItem from="1564055792290" duration="3871000" />
+      <workItem from="1568211454206" duration="18000" />
+      <workItem from="1569501420616" duration="1497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26565000" />
+    <option name="totallyTimeSpent" value="28080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -277,13 +374,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -342,13 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/StatelessGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/MessageDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -360,16 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -412,16 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/http/QueryStringMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/http/MimeType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -431,16 +501,6 @@
             <element signature="e#844#845#0" expanded="true" />
             <element signature="e#894#895#0" expanded="true" />
             <element signature="e#921#922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -515,18 +575,186 @@
     <entry file="file://$PROJECT_DIR$/src/model/GameMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
+    <entry file="file://$PROJECT_DIR$/src/api/RequestEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/GameSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1193#1194#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/StatelessGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/http/QueryStringMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1554-12_Player2.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1554-12_Player1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1556-48_Player1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1556-48_Player2.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1558-21_Player1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1558-21_Player2.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/http/HTTPAsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1559-46_Player1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1559-46_Player2.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/PlayerClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="264" column="54" selection-start-line="264" selection-start-column="54" selection-end-line="264" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2985#2986#0" expanded="true" />
+            <element signature="e#3030#3031#0" expanded="true" />
+            <element signature="e#3069#3070#0" expanded="true" />
+            <element signature="e#3101#3102#0" expanded="true" />
+            <element signature="e#3156#3157#0" expanded="true" />
+            <element signature="e#3196#3197#0" expanded="true" />
+            <element signature="e#3232#3233#0" expanded="true" />
+            <element signature="e#3264#3265#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+            <element signature="e#3363#3364#0" expanded="true" />
+            <element signature="e#3396#3397#0" expanded="true" />
+            <element signature="e#3427#3428#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3611#3612#0" expanded="true" />
+            <element signature="e#3699#3700#0" expanded="true" />
+            <element signature="e#9093#9094#0" expanded="true" />
+            <element signature="e#9181#9182#0" expanded="true" />
+            <element signature="e#12704#12705#0" expanded="true" />
+            <element signature="e#12805#12806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1601-06_Player1.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Simulations/2019-09-26@1601-06_Player2.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
   </component>
