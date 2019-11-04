@@ -171,7 +171,7 @@ public class PlayServlet extends HttpServlet {
                 ofy().save().entity(session);
 
                 //Respond:
-                publishStateToAllPlayers(game);
+                publishStateToAllPlayers(game, row, col);
                 response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
                 return;
 
@@ -190,7 +190,7 @@ public class PlayServlet extends HttpServlet {
                 ofy().save().entity(game);
                 ofy().save().entity(session);
 
-                publishStateToAllPlayers(game);
+                publishStateToAllPlayers(game, row, col);
                 response.getWriter().write(new PlayResponse(move, row, col, game.getGameState(), session.getPoints()).toJSON());
                 return;
 
@@ -221,13 +221,13 @@ public class PlayServlet extends HttpServlet {
 
     }
 
-    //This currently sends the new state to ALL players once any place in the board has been changes. Ideally, we would want
-    //only those who have partial states intersecting with the changed cell to be updated.
-    private void publishStateToAllPlayers(final Game game) {
+    private void publishStateToAllPlayers(final Game game, final int changedRow, final int changedCol) {
         final List<Session> allSessions = ofy().load().type(Session.class).filter("gameKey", game.getKey()).list();
-        logger.log(Level.INFO, "Number of sessions found for this game: " + allSessions.size());
+//        logger.log(Level.INFO, "Number of sessions found for this game: " + allSessions.size());
         for (final Session session : allSessions) {
-            publishStateToPlayer(game, session);
+            if (changedRow >= 0 && changedRow <= session.getPositionRow() && changedCol >= 0 && changedCol <= session.getPositionCol()) {
+                publishStateToPlayer(game, session);
+            }
         }
     }
 
@@ -241,7 +241,7 @@ public class PlayServlet extends HttpServlet {
             GameMessage message = new GameMessage(gameState, partialState);
             String json = message.toJson();
             channel.publish("state", json);
-            logger.log(Level.INFO, "Published state to channel with name " + channelName);
+//            logger.log(Level.INFO, "Published state to channel with name " + channelName);
         }
         catch (AblyException e) {
             throw new RuntimeException (e);
