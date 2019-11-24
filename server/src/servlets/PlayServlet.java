@@ -225,7 +225,10 @@ public class PlayServlet extends HttpServlet {
         final List<Session> allSessions = ofy().load().type(Session.class).filter("gameKey", game.getKey()).list();
 //        logger.log(Level.INFO, "Number of sessions found for this game: " + allSessions.size());
         for (final Session session : allSessions) {
-            if (changedRow >= 0 && changedRow <= session.getPositionRow() && changedCol >= 0 && changedCol <= session.getPositionCol()) {
+            if (
+                    changedRow >= session.getPositionRow() && changedRow < session.getPositionRow() + session.getPartialStatePreference().getHeight() &&
+                    changedCol >= session.getPositionCol() && changedCol < session.getPositionCol() + session.getPartialStatePreference().getWidth()
+            ) {
                 publishStateToPlayer(game, session);
             }
         }
